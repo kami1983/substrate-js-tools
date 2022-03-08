@@ -22,7 +22,7 @@ do{
     const momentPrev = await api.query.timestamp.now.at(lastHdr.hash);
     if(lastTimeStamp > 0) {
         // console.log(`BN: ${lastHdr.number.toHuman()}, timeStamp: ${momentPrev.toNumber()} Diff: ${lastTimeStamp - momentPrev.toNumber()}`)
-        if(lastTimeStamp - momentPrev.toNumber() > 6999) {
+        if(lastTimeStamp - momentPrev.toNumber() > 6050) {
             console.log(`BN: ${lastHdr.number.toHuman()}, timeStamp: ${momentPrev.toNumber()} Diff: ${lastTimeStamp - momentPrev.toNumber()}`)
         }
     }
