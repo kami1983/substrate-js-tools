@@ -1,0 +1,12 @@
+{
+  "name": "Ares-js-tools",
+  "version": "1.0.0",
+  "description": "Developer for ares.",
+  "main": "index.js",
+  "author": "kami1983 <kami@cancanyou.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@polkadot/api": "^7.10.1"
+  }
+}
