@@ -52,7 +52,9 @@ exposures.forEach(([key, exposure]) => {
         console.log(`${pubAddr} is excluded, ss58Addr = ${pubAddr}, freeBalance = ${freeBalance}, reservedBalance = ${reservedBalance}`)
         console.log("-----------")
     }else{
-        gladiosBalance.push([ss58Addr, totalBalance.toString()])
+        if(totalBalance >= BigInt("1000000000000")){
+            gladiosBalance.push([ss58Addr, totalBalance.toString()])
+        }
     }
 
     debugTotalBalance += BigInt(totalBalance)
@@ -60,14 +62,14 @@ exposures.forEach(([key, exposure]) => {
 
 import * as fs from 'fs';
 try {
-    const file_name = './gladios-balance.json'
+    const file_name = './gladios-balance-0428.json'
 
     const sourceContent = JSON.stringify(gladiosBalance); // "(\d+)"
     const writeContent = sourceContent.replace(/("\d+")/g, (arg1)=>{
         return arg1.replaceAll('"', '')
     });
 
-    fs.writeFileSync('./gladios-balance.json', writeContent)
+    fs.writeFileSync(file_name, writeContent)
     console.log("Save filename = ", file_name)
 } catch (err) {
     console.error(err)
